@@ -17,6 +17,9 @@ gaps left 10
 gaps right 10
 default_border pixel 1
 default_floating_border pixel 1
+bindsym $mod+b exec i3lock
+bindsym XF86MonBrightnessUp exec echo '55000' > /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessDown exec echo '25000' > /sys/class/backlight/intel_backlight/brightness
 
 set $mod Mod4
 
