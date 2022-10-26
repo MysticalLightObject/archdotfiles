@@ -32,4 +32,13 @@ yay amazon-corretto-11
 # install intelliJ IDEA
 yay jetbrains-toolbox
 
+# fix audio
+install_pulse
+
+#install pip3
+sudo pacman -Syu pip3
+
 # install nvm
+# install pritunl from the website
+# fix ntp ???
+systemctl status systemd-timesyncd
