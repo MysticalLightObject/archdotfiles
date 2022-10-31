@@ -18,6 +18,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sudo pacman -Syu nerd-fonts-terminus nerd-fonts-noto-sans-mono
 # install Chinese fonts
 sudo pacman -Syu noto-fonts-cjk
+# install emoji fonts
+sudo pacman -Syu noto-fonts-emoji
 
 # install jq & yq
 sudo pacman -Syu jq yq
