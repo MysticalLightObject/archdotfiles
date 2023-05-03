@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Set list of themes to themes from when loading at random
+# Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -99,23 +99,48 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-kctx () {
+#
+
+### CUSTOM STUFF ###
+JAVA_HOME_11="/home/mike/piano/amazon-corretto-11.0.19.7.1-linux-x64"
+JAVA_HOME_17="/home/mike/piano/amazon-corretto-17.0.7.7.1-linux-x64"
+
+export PATH="/home/mike/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
+export JAVA_HOME_11=$JAVA_HOME_11
+export JAVA_HOME_17=$JAVA_HOME_17
+#default should be java 11
+export JAVA_HOME=$JAVA_HOME_11
+#export BROWSER=/usr/bin/google-chrome-stable
+unset BROWSER
+
+#piano-bash-env
+for file in "/home/mike"/piano/gitrepos/piano-bash-env/*.sh; do source "$file"; done
+
+#custom aliases and functions
+GITREPOS="$HOME/piano/gitrepos"
+
+alias k="kubectl"
+alias cdg="cd $GITREPOS"
+alias cdpsb="cd $GITREPOS/psb"
+alias ei3="nvim $HOME/.i3/config"
+alias ezshrc="nvim $HOME/.zshrc"
+
+function kctx() {
         kubectl config use-context $1
 }
-alias k="kubectl"
-alias kns="kubectl ns"
-alias p="sudo pacman -Syu"
-alias vim="nvim"
-alias mkfile="install -D /dev/null"
-alias vimc="vim ~/.config/nvim/init.vim"
 
-for file in "/home/mike"/gitrepos/piano-bash-env/*.sh; do source "$file"; done
-export JAVA_HOME="/home/mike/amazon-corretto-11.0.17.8.1-linux-x64"
-export PATH="$JAVA_HOME/bin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export EDITOR="vim"
-export FZF_DEFAULT_COMMAND='find .'
+function fixlang() {
+	setxkbmap -layout us,ru
+	setxkbmap -option 'grp:caps_toggle'
+}
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+function swjava() {
+	JAVA_VERSION=$1
+	if [[ $JAVA_VERSION = 11 ]];
+	then
+		export JAVA_HOME=$JAVA_HOME_11
+	elif [[ $JAVA_VERSION = 17 ]];
+	then
+		export JAVA_HOME=$JAVA_HOME_17
+	fi
+}
