@@ -102,10 +102,10 @@ source $ZSH/oh-my-zsh.sh
 #
 
 ### CUSTOM STUFF ###
-JAVA_HOME_11="/home/mike/piano/amazon-corretto-11.0.19.7.1-linux-x64"
-JAVA_HOME_17="/home/mike/piano/amazon-corretto-17.0.7.7.1-linux-x64"
+JAVA_HOME_11="$HOME/piano/amazon-corretto-11.0.19.7.1-linux-x64"
+JAVA_HOME_17="$HOME/piano/amazon-corretto-17.0.7.7.1-linux-x64"
 
-export PATH="/home/mike/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
+export PATH="$HOME/piano/ngrok:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
 export JAVA_HOME_11=$JAVA_HOME_11
 export JAVA_HOME_17=$JAVA_HOME_17
 #default should be java 11
@@ -124,6 +124,8 @@ alias cdg="cd $GITREPOS"
 alias cdpsb="cd $GITREPOS/psb"
 alias ei3="nvim $HOME/.i3/config"
 alias ezshrc="nvim $HOME/.zshrc"
+alias vim="nvim"
+alias rr="cd $GITREPOS/psb/registry && git pull && swjava 17 && ./gradlew localDockerBuild && docker compose up"
 
 function kctx() {
         kubectl config use-context $1
