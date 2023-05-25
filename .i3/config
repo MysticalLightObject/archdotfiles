@@ -179,6 +179,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 assign [class="Google-chrome"] $ws1
+assign [class="firefox"] $ws1
 assign [class="jetbrains-idea"] $ws3
 assign [class="pritunl"] $ws4
 assign [class="KeePassXC"] $ws4

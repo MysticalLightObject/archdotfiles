@@ -121,6 +121,7 @@ GITREPOS="$HOME/piano/gitrepos"
 
 alias k="kubectl"
 alias cdg="cd $GITREPOS"
+alias cdp="cd $GITREPOS/piano-vx"
 alias cdpsb="cd $GITREPOS/psb"
 alias ei3="nvim $HOME/.i3/config"
 alias ezshrc="nvim $HOME/.zshrc"
