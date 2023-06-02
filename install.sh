@@ -15,7 +15,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # copy .zshrc to ~/.zshrc
 
 # install google-chrome
-yay google-chrome amazon-corretto-11 jetbrains-toolbox
+yay google-chrome amazon-corretto-11 jetbrains-toolbox xkb-switch
 
 # fix audio
 install_pulse
