@@ -1,6 +1,6 @@
 cd ~
 # install some packages
-sudo pacman -Syu base-devel nerd-fonts-terminus nerd-fonts-noto-sans-mono noto-fonts-cjk noto-fonts-emoji jq yq ttf-fira-code firefox ripgrep neovim pip3
+sudo pacman -Syu base-devel nerd-fonts-terminus nerd-fonts-noto-sans-mono noto-fonts-cjk noto-fonts-emoji jq yq ttf-fira-code firefox ripgrep neovim pip3 openssl libxcrypt-compat maim
 
 # install yay
 git clone https://aur.archlinux.org/yay-git.git
