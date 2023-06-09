@@ -41,8 +41,10 @@ XTerm*selectToClipboard: true
 *color11:                         #f7ca88
 
 !! blue dark/light
-*color4:                          #7cafc2
-*color12:                         #7cafc2
+!!*color4:                          #7cafc2
+*color4:                          #92d17b
+!!*color12:                         #7cafc2
+*color12:                         #92d17b
 
 !! magenta dark/light
 *color5:                          #ba8baf
@@ -80,9 +82,9 @@ URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
-! URxvt*inheritPixmap:            true
-! URxvt*transparent:              true
-! URxvt*shading:                  138
+URxvt*inheritPixmap:            true
+URxvt*transparent:              true
+URxvt*shading:                  20
 
 ! Normal copy-paste keybindings without perls
 URxvt.iso14755:                   false
