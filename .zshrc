@@ -102,16 +102,14 @@ source $ZSH/oh-my-zsh.sh
 #
 
 ### CUSTOM STUFF ###
-JAVA_HOME_11="$HOME/piano/amazon-corretto-11.0.19.7.1-linux-x64"
-JAVA_HOME_17="$HOME/piano/amazon-corretto-17.0.7.7.1-linux-x64"
+JAVA_HOME_11="/usr/lib/jvm/java-11-amazon-corretto"
+JAVA_HOME_17="/usr/lib/jvm/java-17-amazon-corretto"
 
 export PATH="$HOME/piano/ngrok:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
 export JAVA_HOME_11=$JAVA_HOME_11
 export JAVA_HOME_17=$JAVA_HOME_17
 #default should be java 11
 export JAVA_HOME=$JAVA_HOME_11
-#export BROWSER=/usr/bin/google-chrome-stable
-unset BROWSER
 
 #piano-bash-env
 for file in "/home/mike"/piano/gitrepos/piano-bash-env/*.sh; do source "$file"; done
