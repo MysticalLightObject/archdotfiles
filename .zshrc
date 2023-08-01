@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 JAVA_HOME_11="/usr/lib/jvm/java-11-amazon-corretto"
 JAVA_HOME_17="/usr/lib/jvm/java-17-amazon-corretto"
 
-export PATH="$HOME/piano/ngrok:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
+export PATH="$HOME/piano/bin:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$PATH"
 export JAVA_HOME_11=$JAVA_HOME_11
 export JAVA_HOME_17=$JAVA_HOME_17
 #default should be java 11
@@ -128,6 +128,9 @@ alias vim="nvim"
 alias bi3c="cp $HOME/.i3/config $HOME/personal/archdotfiles/.i3/config"
 alias bobs="cdobs && git add . && git commit -m \"New update\" && git push origin master"
 alias rr="cd $GITREPOS/psb/registry && git pull && swjava 17 && ./gradlew localDockerBuild && docker compose up"
+alias startvpn="openvpn_start"
+alias stopvpn="openvpn_stop"
+alias uncommit="git reset --soft HEAD^"
 
 function kctx() {
         kubectl config use-context $1
@@ -135,11 +138,6 @@ function kctx() {
 
 function pacs() {
 	sudo pacman -Syu $1
-}
-
-function fixlang() {
-	setxkbmap -layout us,ru
-	setxkbmap -option 'grp:caps_toggle'
 }
 
 function swjava() {
@@ -151,11 +149,4 @@ function swjava() {
 	then
 		export JAVA_HOME=$JAVA_HOME_17
 	fi
-}
-
-function disph {
-	xrandr --dpi 220 --output eDP-1 --off --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off
-}
-function dispw {
-	xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off	
 }
