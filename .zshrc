@@ -114,10 +114,12 @@
 #### CUSTOM STUFF ###
 JAVA_HOME_11="/usr/lib/jvm/java-11-amazon-corretto"
 JAVA_HOME_17="/usr/lib/jvm/java-17-amazon-corretto"
+JAVA_HOME_21="/usr/lib/jvm/java-21-amazon-corretto"
 
 export PATH="$HOME/piano/bin:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$HOME/bin:$PATH"
 export JAVA_HOME_11=$JAVA_HOME_11
 export JAVA_HOME_17=$JAVA_HOME_17
+export JAVA_HOME_21=$JAVA_HOME_21
 #default should be java 11
 export JAVA_HOME=$JAVA_HOME_11
 
@@ -181,11 +183,18 @@ function swjava() {
 	elif [[ $JAVA_VERSION = 17 ]];
 	then
 		export JAVA_HOME=$JAVA_HOME_17
+	elif [[ $JAVA_VERSION = 21 ]];
+	then
+		export JAVA_HOME=$JAVA_HOME_21
 	fi
 }
 
 function vlcg() {
-	vlc $HOME/Music/Studying\ with\ Gandalf.opus
+	if [[ $1 == 1 ]]; then
+		vlc $HOME/Music/work_music/Studying\ with\ Gandalf.opus &
+	elif [[ $1 == 2 ]]; then
+		vlc $HOME/Music/work_music/From\ Amon\ Hen\ to\ Osgiliath.opus &
+	fi
 }
 
 function os() {
@@ -194,6 +203,14 @@ function os() {
 	kill $SSLOCAL_PID
 	sslocal -c $HOME/bin/shadow_config.json &
 	sudo openvpn_start
+}
+
+function cpi() {
+	cp id-ui-2/$1 piano-id-ui/$1
+}
+
+function fixJenkins() {
+	$HOME/bin/fixJenkins.sh
 }
 export EDITOR="nvim"
 
