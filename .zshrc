@@ -157,6 +157,8 @@ alias startvpn="openvpn_start"
 alias stopvpn="openvpn_stop"
 alias uncommit="git reset --soft HEAD^"
 alias sshpc="ssh -p 42069 mike@192.168.3.79"
+alias apython="source /home/mike/bin/python_3.11.8/bin/activate"
+alias notes="nvim $HOME/Yandex.Disk/mike-notes/"
 
 function kctx() {
         kubectl config use-context $1
