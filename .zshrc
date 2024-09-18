@@ -116,7 +116,7 @@ JAVA_HOME_11="/usr/lib/jvm/java-11-amazon-corretto"
 JAVA_HOME_17="/usr/lib/jvm/java-17-amazon-corretto"
 JAVA_HOME_21="/usr/lib/jvm/java-21-amazon-corretto"
 
-export PATH="$HOME/piano/bin:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$HOME/bin:$PATH"
+export PATH="$HOME/piano/bin:$HOME/Downloads/idea-IU-223.8836.41:$JAVA_HOME_11/bin:$HOME/bin:$HOME/.spoof-dpi/bin:$PATH"
 export JAVA_HOME_11=$JAVA_HOME_11
 export JAVA_HOME_17=$JAVA_HOME_17
 export JAVA_HOME_21=$JAVA_HOME_21
@@ -204,7 +204,7 @@ function os() {
 	echo "Shadowsocks proxy PID is: $SSLOCAL_PID. Killing it!"
 	kill $SSLOCAL_PID
 	sslocal -c $HOME/bin/shadow_config.json &
-	sudo openvpn_start
+	sudo /home/mike/bin/openvpn_start
 }
 
 function cpi() {
@@ -213,6 +213,9 @@ function cpi() {
 
 function fixJenkins() {
 	$HOME/bin/fixJenkins.sh
+}
+function unfixJenkins() {
+	$HOME/bin/unfixJenkins.sh
 }
 export EDITOR="nvim"
 
